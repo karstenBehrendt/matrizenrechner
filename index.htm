@@ -1,0 +1,317 @@
+<html>
+<head>
+	<meta charset=utf-8>
+	<meta name=description content="Der Matrizenrechner berechnet online, per Skript so ziemlich alles was Du brauchst, vom Kreuzprodukt über verschiedene Matrizenzerlegungen bis hin zu Normen. ">
+	<meta name=keywords content="Spur, Adjunkte, Inverse, QR-Zerlegung, Matrixmultiplikation, Skalarmultiplikation, Kreuzprodukt, Determinante, Skalarprodukt, Matrizenaddition, Matrix transponieren, Cholesky-Zerlegung, Spatprodukt, berechnen">
+	<meta name=author content="Karsten Behrendt">
+	<meta name=email content="info@matrizen-rechner.de">
+	<meta name=Distribution content=Global>
+	<meta name=Rating content=General>
+	<meta name=Robots content="INDEX,FOLLOW">
+	<meta name=Revisit-after content="31 Days">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+	  {lang: 'de'}
+	</script>
+	<script>var pkBaseURL=(("https:"==document.location.protocol)?"https://karottika.de/piwik/":"http://karottika.de/piwik/");document.write(unescape("%3Cscript src='"+pkBaseURL+"piwik.js' type='text/javascript'%3E%3C/script%3E"));</script>
+	<script>try{var piwikTracker=Piwik.getTracker(pkBaseURL+"piwik.php",8);piwikTracker.trackPageView();piwikTracker.enableLinkTracking();}catch(err){}</script>
+
+	<script src=rechnung.js></script>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<title>Matrizenrechner</title>
+
+</head>
+<body onload="erklaerungenEntfernen()">
+	<!--
+
+	LINKS LINKS
+
+	-->
+	<div id=links>
+	Alphabetisch <br><br>
+	<input type=button class=button value="Adjunkte" onclick="adjunkte()"><br>
+	<input type=button class=button value="Äquilibrierung" onclick="aequilibrierung()"><br>
+	<input type=button class=button value="Ax = b nach x lösen" onclick="axb()"><br>
+	<input type=button class=button value="Cholesky-Zerlegung" onclick="cholesky()"><br>
+	<input type=button class=button value="Determinante Laplace" onclick="determinante()"><br>
+	<input type=button class=button value="Determinante Zerlegung" onclick="LRdeterminante()"><br>
+	<input type=button class=button value="Dimension Kern Kern" onclick="dimensionkern()"><br>
+	<input type=button class=button value="Dimensionsregel" onclick="dimensionsregel()"><br>
+	<input type=button class=button value="Gauss-Elimination" onclick="gauss()"><br>
+	<input type=button class=button value="HouseHolder Matrix" onclick="houseHold()"><br>
+	<input type=button class=button value="Inverse" onclick="inverse()"><br>
+	<input type=button class=button value="Kreuzprodukt" onclick="kreuzprodukt()"><br>
+	<input type=button class=button value="LR-Zerlegung" onclick="lrZerlegung()"><br>
+	<input type=button class=button value="Matrixaddition" onclick="matrixAddition()"><br>
+	<input type=button class=button value="Matrix1*Vektor" onclick="vektormultiplikation()"><br>
+	<input type=button class=button value="Matrixmultiplikation" onclick="matrixmultiplikation()"><br>
+	<input type=button class=button value="QR-House" onclick="qrhouse()"><br>
+	<input type=button class=button value="QR-Givens" onclick="qrgivens()"><br>
+	<input type=button class=button value="Rang der Matrix" onclick="rang()"><br>
+	<input type=button class=button value="Skalar * Matrix" onclick="skalarmultiplikation()"><br>
+	<input type=button class=button value="Skalarprodukt" onclick="skalarProdukt()"><br>
+	<input type=button class=button value="Spatprodukt" onclick="spatprodukt()"><br>
+	<input type=button class=button value="Spur" onclick="spur()"><br>
+	<input type=button class=button value="Transponieren" onclick="transponierteAusgeben()"><br>
+	<input type=button class=button value="Vektor1*Vektor2(t)" onclick="vtv()"><br>
+	Normen: Matrix: <br>
+	<button onclick="spaltensummennorm(); return false">||A|| <sub>1</sub></button>
+	<button onclick="zeilensummennorm(); return false">||A|| <sub>&#8734;</sub></button><br>
+	<button onclick="gesamtnorm(); return false">||A|| </button>
+	<button onclick="relFehler(); return false">&kappa;<sub>rel</sub></button><br>
+	Vektor:<br>
+	<button onclick="betragsnorm(); return false">||A||</button>
+	<button onclick="euklidnorm(); return false">||A|| <sub>2</sub></button>
+	<button onclick="maxnorm(); return false">||A||<sub>&#8734;</sub> </button><br>
+	Nicht fertig: <br>
+	<input type=button class=button value=Pivotisierung onclick="pivotisierung()"><br>
+	<input type=button class=button value="Äquilibrierung + Pivotisierung" onclick="aequipivo()"><br>
+	<input type=button class=button value="Eigenwerte" onclick="eigenwerte()"><br>
+	</div>
+	<!--
+
+	LINKS RECHTS 
+
+	-->
+	<div id=rechts>
+	Nach Typ: <br><br>
+	Matrix und Vektor: <br>
+	<input type=button class=button value="Ax = b nach x lösen" onclick="axb()"><br>
+	<input type=button class=button value=Matrix1*Vektor onclick="vektormultiplikation()"><br>	
+	Eine Matrix: <br>
+	<input type=button class=button value=Adjunkte onclick="adjunkte()"><br>
+	<input type=button class=button value="Äquilibrierung" onclick="aequilibrierung()"><br>	
+	<input type=button class=button value=Cholesky-Zerlegung onclick="cholesky()"><br>
+	<input type=button class=button value="Determinante Laplace" onclick="determinante()"><br>
+	<input type=button class=button value="Determinante Zerlegung" onclick="LRdeterminante()"><br>
+	<input type=button class=button value="Dimension Kern" onclick="dimensionkern()"><br>
+	<input type=button class=button value=Dimensionsregel onclick="dimensionsregel()"><br>
+	<input type=button class=button value=Gauss-Elimination onclick="gauss()"><br>
+	<input type=button class=button value=Inverse onclick="inverse()"><br>
+	<input type=button class=button value=LR-Zerlegung onclick="lrZerlegung()"><br>
+	<input type=button class=button value=QR-House onclick="qrhouse()"><br>
+	<input type=button class=button value=QR-Givens onclick="qrgivens()"><br>
+	<input type=button class=button value="Rang der Matrix" onclick="rang()"><br>
+	<input type=button class=button value=Spur onclick="spur()"><br>
+	<input type=button class=button value=Transponieren onclick="transponierteAusgeben()"><br>
+	Normen: <br>
+	<button onclick="spaltensummennorm(); return false">||A|| <sub>1</sub></button>
+	<button onclick="zeilensummennorm(); return false">||A|| <sub>&#8734;</sub></button><br>
+	<button onclick="gesamtnorm(); return false">||A|| </button>
+	<button onclick="relFehler(); return false">&kappa;<sub>rel</sub></button><br>
+	Zwei Matrizen: <br>
+	<input type=button class=button value=Matrixaddition onclick="matrixAddition()"><br>	
+	<input type=button class=button value=Matrixmultiplikation onclick="matrixmultiplikation()"><br>	
+	Ein Vektor: <br>
+	<input type=button class=button value="HouseHolder Matrix" onclick="houseHold()"><br>
+	Normen: <br>
+	<button onclick="betragsnorm(); return false">||A||</button>
+	<button onclick="euklidnorm(); return false">||A|| <sub>2</sub></button>
+	<button onclick="maxnorm(); return false">||A||<sub>&#8734;</sub> </button><br>
+	Zwei Vektoren: <br>
+	<input type=button class=button value=Kreuzprodukt onclick="kreuzprodukt()"><br>
+	<input type=button class=button value=Skalarprodukt onclick="skalarProdukt()"><br>
+	<input type=button class=button value="Vektor1*Vektor2(t)" onclick="vtv()"><br>
+	Drei Vektoren: <br>
+	<input type=button class=button value=Spatprodukt onclick="spatprodukt()"><br>
+	Matrix und Skalar: <br>
+	<input type=button class=button value="Skalar * Matrix" onclick="skalarmultiplikation()"><br>
+	Nicht fertig: <br>
+	<input type=button class=button value=Pivotisierung onclick="pivotisierung()"><br>
+	<input type=button class=button value="Äquilibrierung + Pivotisierung" onclick="aequipivo()"><br>
+	<input type=button class=button value="Eigenwerte" onclick="eigenwerte()"><br>
+	</div>
+	<!--
+
+	HIER DER INHALT! 
+
+	-->
+	<div id=kompletterInhalt>
+		<div id=ueberschrift>
+		<a href="http://matrizen-rechner.de"><h1> Der Matrizenrechner</h1></a>
+		</div>
+
+		<form name=form1>
+		<div id=eingabe>
+		
+		<table id=eingabeTabelle>
+			<tr>
+				<td class=tdTop>
+					Matrix 1
+				</td>
+				<td class=tdTop>
+					Matrix 2
+				</td>
+				<td class=tdTop>
+					3 Vektoren
+				</td>
+				<td class=tdTop>
+					Skalar
+				</td>
+							
+			</tr>
+			<tr>
+				<td>
+		<textarea name=m1 cols=25 rows=7>1 1 1 1 1
+1 2 3 4 8 
+1 8 2 4 1
+1 1 4 2 5
+1 2 3 4 5</textarea>
+				</td>
+				<td>
+		<textarea name=m2 cols=25 rows=7>1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 0 1 0
+0 0 0 0 1</textarea>
+				</td>
+				<td>
+		<textarea name=vektor cols=3 rows=7>5
+5
+5
+5
+5</textarea>
+		<textarea name=vektor2 cols=3 rows=7>5
+5
+5
+5
+5</textarea>
+		<textarea name=vektor3 cols=3 rows=7>5
+5
+5
+5
+5</textarea>
+				</td>
+				<td>
+		<textarea name=skalar cols=3 rows=1>5</textarea>
+				</td>
+							
+			</tr>
+		</table>
+
+
+
+
+
+
+
+		</div>
+		<br>
+		<div id=ergebnisseunten>
+			
+		</div>
+
+
+		<div id=optionen>
+
+
+			Top 5: <input type=button class=button value=Kreuzprodukt onclick="kreuzprodukt()">
+			<input type=button class=button value=QR-Zerlegung onclick="qrgivens()">
+			<input type=button class=button value="Determinante(LP)" onclick="determinante()">
+			<input type=button class=button value=LR-Zerlegung onclick="lrZerlegung()">
+			<input type=button class=button value=Matrixmultiplikation onclick="matrixmultiplikation()">
+			<br>
+			"Die Top 5 Unterseiten": <a href=kreuzprodukt.htm>Kreuzprodukt</a>, <a href=qrzerlegung.htm>QR-Zerlegung</a>, <a href=determinante.htm>Determinante</a>, <a href=lrzerlegung.htm>LR-Zerlegung</a>, <a href=matrixMulti.htm>Matrixmultiplikation</a>
+
+			<br> &nbsp;
+
+			Anzahl Nachkommastellen:
+			<select name=nachkomma size=1>
+			<option>0</option>
+			<option>1</option>
+			<option>2</option>
+			<option selected>3</option>
+			<option>4</option>
+			<option>5</option>
+			<option>6</option>
+			<option>7</option>
+			<option>8</option>
+			<option>9</option>
+
+			</select>
+			
+		</div>
+		<br>
+		<div id=ausgabe>
+			<div id=erklaerungsdiv>
+				<p id=erklaerung>
+						Für diese Seite muss Javascript aktiv sein. <br><br>
+						Der Matrizenrechner besteht aus einem Skript zur Berechnung einiger Matrixoperationen. <br><br>
+						Skalarmultiplikation: Einfach nur eine Matrix mit einer Zahl multiplizieren, dabei wird jeder Eintrag mit dem Skalar multipliziert. <br><br>
+						Matrixmultiplikation: Die Matrixmultiplikation ist sehr viel Arbeit per Hand. Skalarprodukte, Zeilen mal Spalten. <br><br>
+						Matrixtransponierung: Eine Matrix wird transponiert, indem man die Elemente der Diagonalen spiegelt(quadratische Matrizen), bzw. die Indizes tauscht (alle Matrizen). <br><br>
+						Determinante: Die Determinanten wird hier nach Laplace berechnet, hierzu empfehle ich den Wikipedia Artikel. Was sehr wichtig ist, ist dass eine Matrix mit einer Determinante ungleich 0 invertierbar ist. <br><br>
+
+						Matrix-Vektor-Multiplikation: Eine Matrixmultiplikation bei der der Vektor als n*1 Matrix aufgefasst wird. <br><br>
+						Gauß Elimination: Zum lösen linearer Gleichungssysteme verwendet man Anfangs Gauss Methode Zeilen mit einander zu addieren. Leider ist diese Methode numerisch nicht sehr stabil.  <br><br>
+						LR-Zerlegung: Mittels Gauss-Verfahren wird diese Matrix in eine linke untere und eine rechte obere Dreiecksmatrix zerlegt. <br><br> 
+						Skalarprodukt: Das Skalarprodukt ist eine Verknüpfung zweier Vektoren, bei der die jeweiligen Elemente miteinander multipliziert werden und die Produkte addiert. <br><br>
+						Vektormultiplikation: Die Vektormultiplikation mit 1 Vektor ausführen. Dies spannt eine Matrix auf. <br><br>
+						Rang: Der Rang einer Matrix ist die Anzahl der linear unabhängigen Zeilen. (=Anzahl der linear unabhängigen Spalten) <br><br>
+						Matrixaddition: Bei der Matrixaddition werden einfach die Elemente der jeweiligen Matrizen miteinander addiert. <br><br>
+						Lineares Gleichungssystem lösen: Mittels Gauss-Verfahren wird hier A*x=b nach x aufgelöst. <br><br>
+						Kern einer Matrix: Die Dimension des Kerns gibt die Anzahl aller Zeilen - die Anzahl der linear unabhängigen Zeilen an. <br><br>
+
+						Das Kreuzprodukt und Spatprodukt sind in der Physik sehr interessant. Hier empfehle ich den Wikipedia-Artikel. <br><br>
+						Die Spur einer Matrix ist die Summer ihrer Diagonaleinträge. Die Spur ist gleichzeitig die Summe aller Eigenwerte. <br><br>
+						Die Cholesky Zerlegung ist eine für synmetrische Matrizen optimierte LR-Zerlegung. <br><br>
+						Die Householder Transformation ist eine Spiegelung, so dass gewünschte Stellen zu Null werden. Die Givens Rotation ist als Drehung ein Spezialfall der Householder Transformation. Das Ergebnis zeigt Q*A = R. R ist eine rechte obere Dreiecksmatrix, Q ist eine orthogonale Matrix. Dies kann umgestellt werden zu A = Q(transponiert)*R. Das Verfahren ist sehr stabil. <br><br>
+						Die Adjunkte berechnet sich so ein bisschen wie die Determinate nach dem Laplaceschen Entwicklungssatz (ein bisschen!). Mit ihr kann man die Inverse berechnen. <br><br>
+						Matrize*Inverse = Einheitsmatrix. Mit der Inversen kann man Ax=b auflösen. Also Inverse*A*x=Inverse*b Daraus folgt: x = Inverse*b. <br><br>
+						Die Betragsnorm ist eine Vektornorm. Alle Vektoreinträge werden hier addiert. <br><br>
+						Die Euklidnorm ist eine Vektornorm. Die Quadrate aller Einträge werden addiert und aus der Summe wird die Wurzel gezogen. <br><br>
+						Die Maximumsnorm ist eine Vektornorm. Es wird hier nur der größte Eintrag des Vektors genommen und das war es schon. <br><br>
+
+						Die Spaltensummennorm ist eine Matrixnorm. Hier wird die Spalte mit der größten Betragsnorm genommen. <br><br>
+						Die Zeilensummennorm ist eine Matrixnorm. Hier wird die Zeile mit der größten Betragsnorm genommen. <br><br>
+						Die Gesamtnorm ist eine Matrixnorm. Für die Norm wird lediglich das betragsmäßig größte Element genommen und mit der Anzahl aller Elemente mutipliziert. <br><br>
+						Der relative Fehler ist die Norm dividiert durch die Norm der Inversen. Hier wird der relative Fehler für drei Normen berechnet. <br><br>
+						Die Pivotisierung guckt welche Zeile an welcher Stelle das größte Element hat und das wird genutzt zur Sortierung. Dadurch kann man z.B. den Gauss Algorithmus stabiler gestalten. <br><br>
+						Bei dieser Äquilibrierung wird bekommt jede Zeile eine Betragsnorm von 1. Dadurch werden Verfahren durch zusätzliche Pivotisierung sehr viel stabiler. <br><br>
+						Äquilibrierung und Pivotisierung führt dazu, dass zB die LR-Zerlegung sehr viel stabiler wird. <br><br>
+						Eigenwerte sind toll.  <br><br>
+				</p> 
+			</div>
+			<br>
+			<textarea name=ergebnisp cols=35 rows=7>z.B. Permutationsmatrizen   </textarea>
+			<textarea name=ergebnis cols=35 rows=7>Ergebnisfeld 1 </textarea>
+			<textarea name=ergebnis2 cols=35 rows=7>Ergebnisfeld 2 </textarea>
+			<br>
+			
+			
+			<input type=button class=button value="Links --> Matrix 1" onclick="hoch1()">
+			<input type=button class=button value="Links --> Matrix 2" onclick="hoch6()">
+			<input type=button class=button value="Mitte --> Matrix 1" onclick="hoch2()">
+			<input type=button class=button value="Mitte --> Matrix 2" onclick="hoch3()">
+			<input type=button class=button value="Rechts --> Matrix 1" onclick="hoch4()">
+			<input type=button class=button value="Rechts --> Matrix 2" onclick="hoch5()">
+			
+
+			
+		</div>
+		</form>
+		<div id=unten>
+			<br>
+			Version 0.994 <br/>
+			2010-2012 by Karsten Behrendt<br/>
+			Anregung/Kritik/Dank: info@matrizen-rechner.de <br/>
+			<a href=impressum.htm>Impressum</a>, <a href=changelog.txt>Changelog </a>
+
+			<br/><br>
+			<div class="plusdinger">
+			<!-- Facebook -->
+			<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://matrizen-rechner.de/ " send="false" layout="box_count" show_faces="false"></fb:like> 
+			<!-- google+1 -->
+			<g:plusone size="tall"></g:plusone>
+			</div>
+
+			<br><br>
+			Alle einfachen Unterseiten: <br><a href=adjunkte.htm>Adjunkte</a>, <a href=cholesky.htm>Cholesky-Zerlegung</a>, <a href="determinante.htm">Determinante</a>, <a href=kreuzprodukt.htm>Kreuzprodukt</a>, <a href=lineareGleichung.htm>Lineares Gleichungssystem lösen</a>, <a href=matrixMulti.htm>Matrixmultiplikation</a>, <a href=norm.htm>Normen/Kondition</a>, <a href=qrzerlegung.htm>QR-Zerlegung</a>, <a href=spatprodukt.htm>Spatprodukt</a>, <a href=spur.htm>Spur</a>
+
+		</div>
+	</div>
+
+
+	<noscript><p><img src="http://karottika.de/piwik/piwik.php?idsite=8" style=border:0 alt=""/></p></noscript>
+</body>
+</html>

@@ -1,0 +1,105 @@
+body{
+	background:#48d1cc;
+	font-family:Sylfaen;
+}
+
+div{
+	text-align:center;
+	width:auto; 
+	border:none;
+}
+
+#links{
+	position: absolute; 
+	float: left; 
+	width:10%; 
+	height:100%;
+}
+
+h1{
+}
+
+#kompletterInhalt{
+position: absolute; 
+left: 10%; 
+width: 80%; 
+height: 100%;
+}
+
+#rechts{
+	position: absolute; 
+	right:0%; 
+	width: 10%; 
+	height:100%;
+}
+
+#eingabe{
+	/*
+	border: 1px solid black; 
+	*/
+}
+
+#eingabeTabelle{
+	/*border: 1px solid black; */
+	margin: 0 auto; 
+}
+
+.tdTop{
+	/* border: 1px solid black; */
+	text-align:center; 
+}
+
+A:link{
+	text-decoration:underline;
+	color:black;
+}
+
+A:visited{
+	text-decoration:none;
+	color:black;
+}
+
+A:active{
+	text-decoration:none; 
+	color:black;
+}
+
+A:hover{
+	text-decoration:none;
+	color:black;
+}
+
+button{
+	width:160px;
+}
+
+.button{
+	width:160px;
+}
+
+#optionen{
+	position:relative;
+	width:100%;
+	left:0%;
+}
+
+#ausgabe{
+	position:relative;
+	width:100%;
+	left:0%;
+}
+
+#erklaerungsdiv{
+	width: 70%; 
+	position: relative; 
+	left: 15%; 
+	border: solid 1px black;
+}
+
+.FlattrButton{
+	vertical-align:text-bottom;
+}
+
+.twitter-share-button{
+	vertical-align:text-bottom;
+}

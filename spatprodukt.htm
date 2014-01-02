@@ -1,0 +1,145 @@
+<html>
+
+<head>
+<meta charset=utf-8>
+<meta name=description content="Der Matrizenrechner berechnet online und per Skript auch direkt das Spatprodukt. ">
+<meta name=keywords content="Spatprodukt, Rechner, Spatproduktrechner, online, Skript, Matrix, Matrizen, Matrizenrechner, Matrizen-rechner">
+<meta name=author content="Karsten Behrendt">
+<meta name=email content="info@matrizen-rechner.de">
+<meta name=Distribution content=Global>
+<meta name=Rating content=General>
+<meta name=Robots content="INDEX,FOLLOW">
+<meta name=Revisit-after content="31 Days">
+<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
+  {lang: 'de'}
+</script>
+<script>var pkBaseURL=(("https:"==document.location.protocol)?"https://karottika.de/piwik/":"http://karottika.de/piwik/");document.write(unescape("%3Cscript src='"+pkBaseURL+"piwik.js' type='text/javascript'%3E%3C/script%3E"));</script>
+<script>try{var piwikTracker=Piwik.getTracker(pkBaseURL+"piwik.php",8);piwikTracker.trackPageView();piwikTracker.enableLinkTracking();}catch(err){}</script>
+<script src=rechnung.js></script>
+
+
+
+<title>Spatprodukt-Rechner</title>
+<style>body{background:#48d1cc;font-family:Sylfaen;}
+div{text-align:center;width:auto;}
+A:link{text-decoration:none;color:black;}
+A:visited{text-decoration:none;color:black;}
+A:active{text-decoration:none;color:black;}
+A:hover{text-decoration:none;color:black;}
+table{text-align:center;width:100%;}
+wahl{width:100%;}
+#optionen{position:relative;width:80%;left:10%;}
+#ausgabe{position:relative;width:75%;left:10%;}
+#erklaerungsdiv{width: 100%; border: 1px solid black; }
+
+</style>
+</head>
+<body>
+<div id=ueberschrift>
+<a href="http://matrizen-rechner.de"><h1> Der <b style="color:black;background-color:#ffff66">Matrizenrechner</b></h1></a>
+</div>
+<form name=form1>
+
+<div id=eingabe>
+<table>
+<tr>
+<td class=namen style="text-align:right;">Matrix Nummer 1</td><td class=namen style="text-align:center;"> Matrix Nummer 2</td><td class=namen style="text-align:left;"> Vektoren, Skalar</td>
+
+</tr>
+</table>
+<textarea name=m1 cols=32 rows=7>1 1 1 1 1
+1 2 3 4 8 
+1 8 2 4 1
+1 1 4 2 5
+1 2 3 4 5</textarea>
+<textarea name=m2 cols=32 rows=7>1 0 0 0 0
+0 1 0 0 0
+0 0 1 0 0
+0 0 0 1 0
+0 0 0 0 1</textarea>
+<textarea name=vektor cols=3 rows=7>6
+5
+1</textarea>
+
+<textarea name=vektor2 cols=3 rows=7>4
+2
+5</textarea>
+<textarea name=vektor3 cols=3 rows=7>3
+5
+5</textarea>
+<textarea name=skalar cols=3 rows=1>5</textarea>
+</div>
+<br>
+<div id=ergebnisseunten>
+Die Ergebnisse findet man unten. 
+</div>
+<br>
+
+<div id=optionen>
+
+<table id=wahl>
+
+<tr>
+<td class=rechts>
+
+<input type=button class=button value=Spatprodukt onclick="spatprodukt()">
+
+</td>
+</tr>
+</table>
+Anzahl Nachkommastellen:
+<select name=nachkomma size=1>
+<option>0</option>
+<option>1</option>
+<option>2</option>
+<option selected>3</option>
+
+<option>4</option>
+<option>5</option>
+<option>6</option>
+<option>7</option>
+<option>8</option>
+<option>9</option>
+</select>
+(Achtung: auch intern)
+</div>
+<br>
+<div id=ausgabe>
+
+<div id=erklaerungsdiv>
+<p id=erklaerung>
+Das Spatprodukt ist in der Physik sehr interessant, hierzu empfehle ich den Wikipedia-Artikel.
+</p> 
+</div>
+<br>
+<textarea name=ergebnisp cols=35 rows=7>z.B. Permutationsmatrizen   </textarea>
+<textarea name=ergebnis cols=35 rows=7>Ergebnisfeld 1 </textarea>
+<textarea name=ergebnis2 cols=35 rows=7>Ergebnisfeld 2 </textarea>
+<br>
+<table>
+<tr>
+<td class=namen style="text-align:center;"><input type=button class=button value="Ins Feld 1" onclick="hoch1()"></td>
+<td class=namen style="text-align:center;"><input type=button class=button value="Ins Feld 1" onclick="hoch2()">
+
+<input type=button class=button value="Ins Feld 2" onclick="hoch3()"></td>
+<td class=namen style="text-align:center;"><input type=button class=button value="Ins Feld 1" onclick="hoch4()">
+
+<input type=button class=button value="Ins Feld 2" onclick="hoch5()"></td>
+</tr>
+</table>
+</div>
+</form>
+<div id=unten>
+<br>
+<br/><br/>
+Einfache Unterseiten: <br><a href=adjunkte.htm>Adjunkte</a>, <a href=cholesky.htm>Cholesky-Zerlegung</a>, <a href="determinante.htm">Determinante</a>, <a href=kreuzprodukt.htm>Kreuzprodukt</a>, <a href=lineareGleichung.htm>Lineares Gleichungssystem lösen</a>, <a href=matrixMulti.htm>Matrixmultiplikation</a>, <a href=norm.htm>Normen/Kondition</a>, <a href=qrzerlegung.htm>QR-Zerlegung</a>, <a href=spatprodukt.htm><b style="color:black;background-color:#a0ffff">Spatprodukt</b></a>, <a href=spur.htm>Spur</a>
+
+<br><br><a href=impressum.htm>Impressum</a>, <a href=changelog.txt>Changelog </a><br>
+
+&copy; 2011 by Karsten Behrendt <br>
+Anregung/Kritik/Dank: info@matrizen-rechner.de <br/>
+</div>
+
+<noscript><p><img src="http://karottika.de/piwik/piwik.php?idsite=8" style=border:0 alt=""/></p></noscript>
+</body>
+</html>

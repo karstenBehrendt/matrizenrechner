@@ -1,0 +1,176 @@
+﻿*** Der Matrizenrechner *** 
+stabil auf matrizen-rechner.de
+
+************* Stand: 22.11.2010 - Besucher Unis in etwa 4 Monaten. 
+RWTH Aachen, Ruhr Uni Bochum, Uni Münster, TU Darmstadt, TU Braunschweig, TU Berlin, Uni Karlsruhe, Uni Saarland, 
+Uni Ulm, Uni Bonn, HS Karlsruhe, TU Dresden, Uni Heidelberg, Uni Magdeburg, Uni Paderborn, TU Kaiserslautern, 
+Uni Erlangen, Uni BW München, Uni Konstanz, TU Freiberg, TU Chemnitz, Uni Siegen, Uni Duisburg Essen, Uni Regensburg, 
+Uni Wuerzburg, Uni Bayreuth, FH Schmalkalden, Uni Frankfurt, Uni Goettingen, TU Dortmund, Uni Hannover, Uni Köln, 
+FU Berlin, Uni Rostock, Uni Dortmund, TU Clausthal, TU Cottbus, Uni Hamburg, TU Harburg, Uni Mainz, HS Esslingen, 
+Uni Freiburg, Uni Bielefeld, Uni Bremen, FH Trier, Uni Augsburg, Uni Potsdam, Uni Tübingen, FH Osnabrück, 
+Uni Wuppertal, TU Ilmenau, Uni Marburg, Uni Jena, HU Berlin, Uni Stuttgart, FH Köln, Uni Kassel, Uni Duisburg, 
+HS Heilbronn, Uni giessen, FH Bochum, HS Niederrhein, HS Ostwestfalen-Lippe, TU München, Uni Kiel, Uni Passau, 
+HS Regensburg, FH Oldenburg, Uni Düsseldorf, Uni Leipzig, TU Sofia, Hochschule Konstanz, Hochschule für Technik Stuttgart, 
+FH Friedberg, Fachhochschule Nordwest Schweiz, Uni Weimar, FH Bielefeld, Uni Lübeck, HS Mittweida, Uni Oldenburg, 
+HS Beuth Berlin, Uni BW Hamburg, Uni Koblenz, TU München, HAW Hamburg, Uni Mannheim, Uni Essen, FH Augsburg, FH Mannheim,
+Hochschule Emden/Leer, Hochschule für Musik, Theater und Medien Hannover (<-- bestimmt verlaufen)
+
+In den ersten 4 Monaten waren also Studenten von 91 Universitäten auf meiner Website. 
+(Reihenfolge übrigens abhängig von der Anzahl der Besucher, aus dem jeweiligen Uninetz) 
+
+Außerdem so einige Forschungsinstitute und Firmen. 
+*************
+
+**
+Version 1.0 - wahrscheinlich nie.. 
+Pivotisierung und Äquilibrierung fehlen dafür noch. 
+
+**
+Version 0.994 - 03.03.2013
+In der LR-Zerlegung hatte sich ein Fehler eingeschlichen. Wenn im Gauss, Rang oder der LR-Zerlegung was fehlerhaftes auftritt, bitte melden. 
+
+**
+Version 0.993 - 24.02.2012
+"Design" etwas übersichtlicher, hoffe ich. 
+
+**
+Version 0.99200000000000000001 - 11.01.2012
+Auf Grund mangelnder Resonanz Flattr und Twitter Buttons entfernt. 
+Überlege sie alle zu entfernen. 
+
+**
+Version 0.992 - 15.05.2011
+Intern ein bisschen geändert. Köpfe nicht mehr nach Kategorieren, sonderen alphabetisch sortiert. 
+Facebook und Flattr integriert. Ein Klick auf egal welches wäre gut für mein Ego. 
+
+**
+Version 0.991 - 10.05.2011
+Danke an Steffi für den Fehler in Skalar * Matrix - der ist jetzt behoben. 
+
+**
+Version 0.99 - 01.02.2011
+Es wird ja immer besser. Die Klausuren kommen immer näher und ich bastel wieder hier dran rum. 
+Es werden jetzt kurze Erklärungen zu jeder Rechnung gemacht, also eine Beschreibung der Rechnung, nicht spezifisch und keine Rechenschritte. 
+Ausserdem javascript und html minimiert für den pagespeed. 
+
+**
+Version 0.91 - 31.01.2011
+Pünktlich zu den Klausuren wieder ein update. 
+Die QR-Zerlegung ist nun über Givens Rotation und Householderspiegelung möglich. 
+Ergebnis ist Q*A = R, was man um Stellen kann zu A = Q(transponiert) *R
+
+**
+Version 0.91 - 24.11.2010
+Anzahl Nachkommastellen frei wählbar. 
+Äquilibrierung
+LR-Determinante intern unabhängig von der Nachkommastellenzahl. Matrixmultiplikation erst bei Ausgabe gerundet. 
+Nachkommastellen auch auf Unterseiten verfügbar. 
+Jugendschutzbeauftrage im Impressum
+
+**
+Version 0.905 - 22.11.2010
+Bezeichnung von vektor*vektor(transponiert) korrigiert. 
+404 hinzugefügt. 
+
+**
+Version 0.90 - 29.09.2010
+Alles schön HTML 5 konform und mit valid CSS 2.1 (ja, die klausuren sind durch, jetzt habe ich nichts zu tun)
+
+**
+Version 0.87 - 07.09.2010
+warum auch immer leute einzeilige matrizen nutzen wollen... es funktioniert jetzt auch.
+
+**
+Version 0.87 - 21.08.2010
+relativer Fehler hinzugefügt, nach max-, betrags- und gesamtnorm. 
+Determinante, Adjunkte und Inverse mit R(n,n) mit n>10 nicht mehr möglich... schont deinen Rechner. 
+
+**
+Version 0.86 - 15.08.2010
+Sehr sinnvolle Zeiteinteilung, in ein paar Tagen noch eine Klausur und ich bastel hier schnell noch was rein... 
+Ein paar Normen hinzugefügt. 
+Vielleicht wäre es doch klüger das ganze mit Klassen zu basteln... aber darauf habe ich gerade keine lust. 
+
+**
+Version 0.85 - 11.08.2010
+QR-Zerlegung jetzt für quadratische und Matrizen R(m,n) mit m>n möglich. 
+Adjunkte und Inverse werden berechnet, hier merkt man dann Stabilität und Rundung. 
+Quelltext aufgeräumt und ein paar interne Funktionen performanter gestaltet. 
+
+**
+Version 0.83 - 10.08.2010
+Mathe- und Gartenstrukturenklausur durch. 
+Cholesky Zerlegung hinzugefügt (womit man auch auf synmetrie prüfen kann)
+Eigenwertberechnung entfernt
+
+**
+Version 0.82 - 15.07.2010
+Kern aus der HTML Datei entfernt - zu Fehlerbehaftet. 
+Spur hinzugefügt. 
+.. man könnte ja meinen ich muss nicht für die Klausuren lernen. 
+Impressum aktiv
+404 aktiv
+
+**
+Version 0.81 - 12.07.2010
+Ergebnisfeld für Permutationsmatrizen hinzugefügt. 
+Gauss-Fehler behoben. 
+Dimensionen dadurch auch korrekt. 
+(Es ist ja nicht so als könnte ich vor den Klausuren was sinnvolleres machen)
+
+**
+Version 0.80 11.07.2010
+Spatprodukt hinzugefügt. 
+Keine bekannten Fehler entfernt. 
+
+**
+Version 0.79 - Anmerkung 10.07.2010
+Leider gibt es einen Fehler in der Matrix: 
+Eigenwerte sind zum grössten Teil inkorrekt, Gauss zT auch, Kern sowiso
+Daraus folgt, dass Dimension(Bild, Defekt) ebenfalls defekt sind. 
+Klausurenphase --> wird jetzt erst einmal nicht behoben. 
+
+**
+Version 0.78 - 07.07.2010
+Umzug auf matrizen-rechner.de 
+Kreuzprodukt hinzugefügt. 
+
+
+**
+Version 0.78 - 30.06.2010
+Kern (fast) berechenbar. 
+Eigenwerteberechnung eingegrenzt, nur von regulären Matrizen möglich. 
+Fehler in Ax=b behoben, Berechnung auf reguläre Matrizen begrenzt. 
+Dimensionsregel
+Dimension vom Kern
+Dimension vom Bild
+
+**
+Version 0.77 - 28.06.2010
+Determinanten jetzt über LR-zerlegung berechenbar. (Komplexitätsklasse viel geringer)
+
+**
+Version 0.76 - 24.06.2010
+Changelog hinzugefügt
+Kontaktadresse hinzugefügt
+
+**
+Version 0.75 - 20.06.2010
+Nun öffentlich. 
+Funktionen: 
+Determinante
+Eigenwerte
+Matrixmultiplikation
+Transponieren
+Gauß-Elimination (ohne Permutation, ohne äquilibrierung, ohne pivotisierung)
+LR Zerlegung (ohne Permutation) 
+Rang berechnen
+Matrixaddition
+Lineare Gleichung lösen (nach vektor x) 
+Vektormultiplikation
+Skalarprodukt
+Householder Matrix
+Vektor-Vektor-Matrix aufspannen
+Skalar * Matrix
+2 Matrizenfelder, 2 Vektorfelder, 1 Skalarfeld
+2 Ergebnisfelder, Möglichkeit ergebnisse ins Matrixfeld zu senden. 

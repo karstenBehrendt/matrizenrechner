@@ -26,6 +26,10 @@ Version 1.0 - wahrscheinlich nie..
 Pivotisierung und Äquilibrierung fehlen dafür noch. 
 
 **
+Version 0.9941 - 03.08.2014
+Fehler in Gauss-Zerlegung gewesen. Danke an Sebastian fürs Fehler melden. Etwa 125000 Besucher vor ihm haben den Fehler nicht gemeldet. 
+
+**
 Version 0.994 - 03.03.2013
 In der LR-Zerlegung hatte sich ein Fehler eingeschlichen. Wenn im Gauss, Rang oder der LR-Zerlegung was fehlerhaftes auftritt, bitte melden. 
 

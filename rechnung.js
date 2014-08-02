@@ -540,11 +540,14 @@ document.getElementById('erklaerung').innerHTML = 'Zum lösen linearer Gleichung
 	}
 	
 
-	
+	/*
+	//Was genau hatte ich hier vor?
 	var pivotElement = new Array(n); 
-	for(var d = 0; d < n; d++){
+	for(var d = 0; d < n; d++)
+	{
 	//PivotElement setzen. 
-		for(var e = 0; e < m; e++){
+		for(var e = 0; e < m; e++)
+		{
 			if(matrix[d][e] != 0){
 				pivotElement[d] = e; 
 				break; 
@@ -552,24 +555,20 @@ document.getElementById('erklaerung').innerHTML = 'Zum lösen linearer Gleichung
 		}
 		
 	//Bei gleichem Pivotelement Zeile leeren. 
-		for(var f = 0; f < d; f++){
-			if(pivotElement[f] == pivotElement[d]){
+	
+	for(var f = 0; f < d; f++)
+		{
+			if(pivotElement[f] == pivotElement[d])
+			{
 				for(var g = 0; g < m; g++){
 					matrix[f][g] = 0; 
 				}
 			}
-		
-		
 		}
+	
 	}
-	
-	
-	
-	
-	
-	
-	
-	 
+	*/
+
 	//document.form1.ergebnisp.value="Lineare Abhängigkeiten müssen zur Zeit selber entfernt werden. ";
 	document.form1.ergebnis2.value="Gauss-Elimination: \n ohne Pivotisierung, \n ohne aequilibrierung, \n und ohne Skalierung \n ohne Rangabfrage, ergo NaNs moeglich \n <---- :D";
 	ausgabe(matrix); 

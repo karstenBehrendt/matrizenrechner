@@ -109,9 +109,13 @@ button{
 }
 
 #ausgabe{
-	position:relative;
+	/*border: 1px solid black;*/ 
+	/*position:relative;*/
 	width:100%;
-	left:0%;
+	max-width: 800px; 
+	margin-left: auto; 
+	margin-right:auto; 
+
 }
 
 #erklaerungsdiv{

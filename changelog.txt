@@ -26,6 +26,10 @@ Version 1.0 - wahrscheinlich nie..
 Pivotisierung und Äquilibrierung fehlen dafür noch. 
 
 **
+Version 0.995 - 03.08.2014
+Durch den Fehler mal wieder das "Design" gesehen und stark vereinfacht. Jetzt bin ich fast zufrieden damit. 
+
+**
 Version 0.9941 - 03.08.2014
 Fehler in Gauss-Zerlegung gewesen. Danke an Sebastian fürs Fehler melden. Etwa 125000 Besucher vor ihm haben den Fehler nicht gemeldet. 
 

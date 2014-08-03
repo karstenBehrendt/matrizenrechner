@@ -1,5 +1,6 @@
 body{
-	background:#48d1cc;
+	/*background:#48d1cc;*/
+	background:#d0d0d0; 
 	font-family:Sylfaen;
 }
 
@@ -26,6 +27,11 @@ width: 80%;
 height: 100%;
 }
 
+#warning
+{
+	color:red; 
+}
+
 #rechts{
 	position: absolute; 
 	right:0%; 
@@ -43,6 +49,21 @@ height: 100%;
 	/*border: 1px solid black; */
 	margin: 0 auto; 
 }
+
+.result_matrix
+{
+	width:30%; 
+
+
+}
+
+.move_button
+{
+	width: 15%; 
+	font-size: 12px; 
+
+}
+
 
 .tdTop{
 	/* border: 1px solid black; */
@@ -73,6 +94,10 @@ button{
 	width:160px;
 }
 
+.top_button{
+	width:15%;
+}
+
 .button{
 	width:160px;
 }
@@ -90,10 +115,10 @@ button{
 }
 
 #erklaerungsdiv{
-	width: 70%; 
+	width: 100%; 
 	position: relative; 
-	left: 15%; 
-	border: solid 1px black;
+	left: 0%; 
+	/*border: solid 2px black;*/
 }
 
 .FlattrButton{

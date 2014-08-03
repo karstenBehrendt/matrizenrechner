@@ -22,105 +22,8 @@
 
 </head>
 <body onload="erklaerungenEntfernen()">
-	<!--
 
-	LINKS LINKS
 
-	-->
-	<div id=links>
-	Alphabetisch <br><br>
-	<input type=button class=button value="Adjunkte" onclick="adjunkte()"><br>
-	<input type=button class=button value="Äquilibrierung" onclick="aequilibrierung()"><br>
-	<input type=button class=button value="Ax = b nach x lösen" onclick="axb()"><br>
-	<input type=button class=button value="Cholesky-Zerlegung" onclick="cholesky()"><br>
-	<input type=button class=button value="Determinante Laplace" onclick="determinante()"><br>
-	<input type=button class=button value="Determinante Zerlegung" onclick="LRdeterminante()"><br>
-	<input type=button class=button value="Dimension Kern Kern" onclick="dimensionkern()"><br>
-	<input type=button class=button value="Dimensionsregel" onclick="dimensionsregel()"><br>
-	<input type=button class=button value="Gauss-Elimination" onclick="gauss()"><br>
-	<input type=button class=button value="HouseHolder Matrix" onclick="houseHold()"><br>
-	<input type=button class=button value="Inverse" onclick="inverse()"><br>
-	<input type=button class=button value="Kreuzprodukt" onclick="kreuzprodukt()"><br>
-	<input type=button class=button value="LR-Zerlegung" onclick="lrZerlegung()"><br>
-	<input type=button class=button value="Matrixaddition" onclick="matrixAddition()"><br>
-	<input type=button class=button value="Matrix1*Vektor" onclick="vektormultiplikation()"><br>
-	<input type=button class=button value="Matrixmultiplikation" onclick="matrixmultiplikation()"><br>
-	<input type=button class=button value="QR-House" onclick="qrhouse()"><br>
-	<input type=button class=button value="QR-Givens" onclick="qrgivens()"><br>
-	<input type=button class=button value="Rang der Matrix" onclick="rang()"><br>
-	<input type=button class=button value="Skalar * Matrix" onclick="skalarmultiplikation()"><br>
-	<input type=button class=button value="Skalarprodukt" onclick="skalarProdukt()"><br>
-	<input type=button class=button value="Spatprodukt" onclick="spatprodukt()"><br>
-	<input type=button class=button value="Spur" onclick="spur()"><br>
-	<input type=button class=button value="Transponieren" onclick="transponierteAusgeben()"><br>
-	<input type=button class=button value="Vektor1*Vektor2(t)" onclick="vtv()"><br>
-	Normen: Matrix: <br>
-	<button onclick="spaltensummennorm(); return false">||A|| <sub>1</sub></button>
-	<button onclick="zeilensummennorm(); return false">||A|| <sub>&#8734;</sub></button><br>
-	<button onclick="gesamtnorm(); return false">||A|| </button>
-	<button onclick="relFehler(); return false">&kappa;<sub>rel</sub></button><br>
-	Vektor:<br>
-	<button onclick="betragsnorm(); return false">||A||</button>
-	<button onclick="euklidnorm(); return false">||A|| <sub>2</sub></button>
-	<button onclick="maxnorm(); return false">||A||<sub>&#8734;</sub> </button><br>
-	Nicht fertig: <br>
-	<input type=button class=button value=Pivotisierung onclick="pivotisierung()"><br>
-	<input type=button class=button value="Äquilibrierung + Pivotisierung" onclick="aequipivo()"><br>
-	<input type=button class=button value="Eigenwerte" onclick="eigenwerte()"><br>
-	</div>
-	<!--
-
-	LINKS RECHTS 
-
-	-->
-	<div id=rechts>
-	Nach Typ: <br><br>
-	Matrix und Vektor: <br>
-	<input type=button class=button value="Ax = b nach x lösen" onclick="axb()"><br>
-	<input type=button class=button value=Matrix1*Vektor onclick="vektormultiplikation()"><br>	
-	Eine Matrix: <br>
-	<input type=button class=button value=Adjunkte onclick="adjunkte()"><br>
-	<input type=button class=button value="Äquilibrierung" onclick="aequilibrierung()"><br>	
-	<input type=button class=button value=Cholesky-Zerlegung onclick="cholesky()"><br>
-	<input type=button class=button value="Determinante Laplace" onclick="determinante()"><br>
-	<input type=button class=button value="Determinante Zerlegung" onclick="LRdeterminante()"><br>
-	<input type=button class=button value="Dimension Kern" onclick="dimensionkern()"><br>
-	<input type=button class=button value=Dimensionsregel onclick="dimensionsregel()"><br>
-	<input type=button class=button value=Gauss-Elimination onclick="gauss()"><br>
-	<input type=button class=button value=Inverse onclick="inverse()"><br>
-	<input type=button class=button value=LR-Zerlegung onclick="lrZerlegung()"><br>
-	<input type=button class=button value=QR-House onclick="qrhouse()"><br>
-	<input type=button class=button value=QR-Givens onclick="qrgivens()"><br>
-	<input type=button class=button value="Rang der Matrix" onclick="rang()"><br>
-	<input type=button class=button value=Spur onclick="spur()"><br>
-	<input type=button class=button value=Transponieren onclick="transponierteAusgeben()"><br>
-	Normen: <br>
-	<button onclick="spaltensummennorm(); return false">||A|| <sub>1</sub></button>
-	<button onclick="zeilensummennorm(); return false">||A|| <sub>&#8734;</sub></button><br>
-	<button onclick="gesamtnorm(); return false">||A|| </button>
-	<button onclick="relFehler(); return false">&kappa;<sub>rel</sub></button><br>
-	Zwei Matrizen: <br>
-	<input type=button class=button value=Matrixaddition onclick="matrixAddition()"><br>	
-	<input type=button class=button value=Matrixmultiplikation onclick="matrixmultiplikation()"><br>	
-	Ein Vektor: <br>
-	<input type=button class=button value="HouseHolder Matrix" onclick="houseHold()"><br>
-	Normen: <br>
-	<button onclick="betragsnorm(); return false">||A||</button>
-	<button onclick="euklidnorm(); return false">||A|| <sub>2</sub></button>
-	<button onclick="maxnorm(); return false">||A||<sub>&#8734;</sub> </button><br>
-	Zwei Vektoren: <br>
-	<input type=button class=button value=Kreuzprodukt onclick="kreuzprodukt()"><br>
-	<input type=button class=button value=Skalarprodukt onclick="skalarProdukt()"><br>
-	<input type=button class=button value="Vektor1*Vektor2(t)" onclick="vtv()"><br>
-	Drei Vektoren: <br>
-	<input type=button class=button value=Spatprodukt onclick="spatprodukt()"><br>
-	Matrix und Skalar: <br>
-	<input type=button class=button value="Skalar * Matrix" onclick="skalarmultiplikation()"><br>
-	Nicht fertig: <br>
-	<input type=button class=button value=Pivotisierung onclick="pivotisierung()"><br>
-	<input type=button class=button value="Äquilibrierung + Pivotisierung" onclick="aequipivo()"><br>
-	<input type=button class=button value="Eigenwerte" onclick="eigenwerte()"><br>
-	</div>
 	<!--
 
 	HIER DER INHALT! 
@@ -152,14 +55,14 @@
 			</tr>
 			<tr>
 				<td>
-		<textarea name=m1 cols=25 rows=7>1 1 1 1 1
+		<textarea name=m1 class="upper_matrix" cols=25 rows=7>1 1 1 1 1
 1 2 3 4 8 
 1 8 2 4 1
 1 1 4 2 5
 1 2 3 4 5</textarea>
 				</td>
 				<td>
-		<textarea name=m2 cols=25 rows=7>1 0 0 0 0
+		<textarea name=m2 class="upper_matrix" cols=25 rows=7>1 0 0 0 0
 0 1 0 0 0
 0 0 1 0 0
 0 0 0 1 0
@@ -190,31 +93,65 @@
 		</table>
 
 
-
-
-
-
-
-		</div>
-		<br>
-		<div id=ergebnisseunten>
-			
 		</div>
 
 
 		<div id=optionen>
 
-
-			Top 5: <input type=button class=button value=Kreuzprodukt onclick="kreuzprodukt()">
-			<input type=button class=button value=QR-Zerlegung onclick="qrgivens()">
-			<input type=button class=button value="Determinante(LP)" onclick="determinante()">
-			<input type=button class=button value=LR-Zerlegung onclick="lrZerlegung()">
-			<input type=button class=button value=Matrixmultiplikation onclick="matrixmultiplikation()">
 			<br>
-			"Die Top 5 Unterseiten": <a href=kreuzprodukt.htm>Kreuzprodukt</a>, <a href=qrzerlegung.htm>QR-Zerlegung</a>, <a href=determinante.htm>Determinante</a>, <a href=lrzerlegung.htm>LR-Zerlegung</a>, <a href=matrixMulti.htm>Matrixmultiplikation</a>
-
-			<br> &nbsp;
-
+			Operation: 
+			<select name="operationen" onchange="perform_operation()">
+				<optgroup label="Generelle Operationen: ">
+					<option value="adjunkte">Adjunkte</option>
+					<option value="aequilibrierung">Äquilibrierung</option>
+					<option value="loesen">Ax = b nach x lösen</option>
+					<option value="cholesky">Cholesky-Zerlegung</option>
+					<option value="determinante_laplace">Determinante nach Laplace</option>
+					<option value="determinante_zerlegung">Determinante mittels LR-Zerlegung</option>
+					<option value="dimension_kern">Dimension Kern</option>
+					<option value="dimensionsregel">Dimensionsregel</option>
+					<option value="gauss">Gauss Elimination</option>
+					<option value="householder">Householder Matrix</option>
+					<option value="inverse">Inverse</option>
+					<option value="kreuzprodukt">Kreuzprodukt</option>
+					<option value="lr_zerlegung">LR Zerlegung</option>
+					<option value="matrixaddition">Matrixaddition</option>
+					<option value="matrix_vektor">Matrix-Vektor-Multiplikation</option>
+					<option value="matrixmultiplikation">Matrixmultiplikation</option>
+					<option value="qr_house">QR Zerlegung mittels Householdermatrix</option>
+					<option value="qr_givens">QR Zerlegung nach Givens</option>
+					<option value="rang">Rang der Matrix</option>
+					<option value="skalar_matrix">Skalar * Matrix</option>
+					<option value="skalarprodukt">Skalarprodukt</option>
+					<option value="spatprodukt">Spatprodukt</option>
+					<option value="spur">Spur der Matrix</option>
+					<option value="transponieren">Matrix transponieren</option>
+					<option value="vektor1_vektor2">Vektor1_transponiert * Vektor2</option>
+				</optgroup>
+				<optgroup label="Matrixnormen: ">
+					<option value="spaltensummennorm">||A|| <sub>1</sub></option>
+					<option value="zeilensummennorm">||A|| <sub>&#8734;</sub></option>
+					<option value="gesamtnorm">||A||</option>
+					<option value="relativer_fehler">&kappa;<sub>rel</sub></option>
+				</optgroup>
+				<optgroup label="Vektornormen: ">Vektornormen: 
+					<option value="betragsnorm">||A||</option>
+					<option value="euklidnorm">||A|| <sub>2</sub></option>
+					<option value="maxnorm">||A||<sub>&#8734;</sub></option>
+				</optgroup>
+				<optgroup label="Unfertig: ">
+					<option value="eigenwerte">Eigenwerte berechnen (nur reelle)</option>
+					<option value="pivotisierung">Pivotisierung</option>
+					<option value="aequlibrierung_pivotisierung">Pivotisierung und Äquilibrierung</option>
+				</optgroup>
+			</select> 
+			
+			<input type=button value="&#8634;" onclick="perform_operation()">
+			
+			
+			
+			
+			
 			Anzahl Nachkommastellen:
 			<select name=nachkomma size=1>
 			<option>0</option>
@@ -273,18 +210,18 @@
 				</p> 
 			</div>
 			<br>
-			<textarea name=ergebnisp cols=35 rows=7>z.B. Permutationsmatrizen   </textarea>
-			<textarea name=ergebnis cols=35 rows=7>Ergebnisfeld 1 </textarea>
-			<textarea name=ergebnis2 cols=35 rows=7>Ergebnisfeld 2 </textarea>
+			<textarea name=ergebnisp class="result_matrix" cols=35 rows=7>z.B. Permutationsmatrizen   </textarea>
+			<textarea name=ergebnis class="result_matrix" cols=35 rows=7>Ergebnisfeld 1 </textarea>
+			<textarea name=ergebnis2 class="result_matrix" cols=35 rows=7>Ergebnisfeld 2 </textarea>
 			<br>
 			
 			
-			<input type=button class=button value="Links --> Matrix 1" onclick="hoch1()">
-			<input type=button class=button value="Links --> Matrix 2" onclick="hoch6()">
-			<input type=button class=button value="Mitte --> Matrix 1" onclick="hoch2()">
-			<input type=button class=button value="Mitte --> Matrix 2" onclick="hoch3()">
-			<input type=button class=button value="Rechts --> Matrix 1" onclick="hoch4()">
-			<input type=button class=button value="Rechts --> Matrix 2" onclick="hoch5()">
+			<input type=button class=move_button value="Links --> Matrix 1" onclick="hoch1()">
+			<input type=button class=move_button value="Links --> Matrix 2" onclick="hoch6()">
+			<input type=button class=move_button value="Mitte --> Matrix 1" onclick="hoch2()">
+			<input type=button class=move_button value="Mitte --> Matrix 2" onclick="hoch3()">
+			<input type=button class=move_button value="Rechts --> Matrix 1" onclick="hoch4()">
+			<input type=button class=move_button value="Rechts --> Matrix 2" onclick="hoch5()">
 			
 
 			
@@ -292,8 +229,8 @@
 		</form>
 		<div id=unten>
 			<br>
-			Version 0.9941 <br/>
-			2010-2012 by Karsten Behrendt<br/>
+			Version 0.995 &copy2010-2014 by Karsten Behrendt<br/>
+			<span id="warning">Bitte unbedingt Fehler und Kritik an mich schicken!</span> <br/>
 			Anregung/Kritik/Dank: info@matrizen-rechner.de <br/>
 			<a href=impressum.htm>Impressum</a>, <a href=changelog.txt>Changelog </a>
 
@@ -304,10 +241,6 @@
 			<!-- google+1 -->
 			<g:plusone size="tall"></g:plusone>
 			</div>
-
-			<br><br>
-			Alle einfachen Unterseiten: <br><a href=adjunkte.htm>Adjunkte</a>, <a href=cholesky.htm>Cholesky-Zerlegung</a>, <a href="determinante.htm">Determinante</a>, <a href=kreuzprodukt.htm>Kreuzprodukt</a>, <a href=lineareGleichung.htm>Lineares Gleichungssystem lösen</a>, <a href=matrixMulti.htm>Matrixmultiplikation</a>, <a href=norm.htm>Normen/Kondition</a>, <a href=qrzerlegung.htm>QR-Zerlegung</a>, <a href=spatprodukt.htm>Spatprodukt</a>, <a href=spur.htm>Spur</a>
-
 		</div>
 	</div>
 

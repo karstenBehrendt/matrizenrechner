@@ -1,17 +1,142 @@
 /*
 	Please do not use this code to evaluate my abilities. 
-	This code was written in dark times: Before using std containers, libraries, object-orientation... basically in medieval times. You also will not find any comments. 
+	This code was written in dark times: Before using containers, libraries, object-orientation... basically in medieval times. You will also not find any comments. 
 	
 	
 	Feel free to copy, use, manipulate and sell it as yours, if you want to. 
 	
-	This is basically a list of numeric funtions and it is in German. 
+	This is basically a list of numeric functions and it is in German. 
 */
 
 //Entfernt den Text für Suchmaschinen, da die Gängigen immer noch nicht das Java-Script durchsuchen. 
 function erklaerungenEntfernen(){
 	document.getElementById('erklaerung').innerHTML = 'Hier kommen kurze Erklärungen hin. '; 
 }
+
+
+//Ruft die einzelnen Operationen basierend auf Auswahl auf. 
+function perform_operation()
+{
+	var operation = document.form1.elements["operationen"].value; 
+
+	switch(operation)
+	{
+		case "adjunkte": 
+			adjunkte(); 
+			break; 
+		case "aequilibrierung": 
+			aequilibrierung(); 
+			break; 	
+		case "loesen": 
+			axb(); 
+			break; 
+		case "cholesky": 
+			cholesky(); 
+			break; 
+		case "determinante_laplace": 
+			determinante(); 
+			break; 
+		case "determinante_zerlegung": 
+			LRdeterminante(); 
+			break; 
+		case "dimension_kern": 
+			dimensionkern(); 
+			break; 
+		case "dimensionsregel": 
+			dimensionsregel(); 
+			break; 
+		case "gauss": 
+			gauss(); 
+			break; 
+		case "householder": 
+			houseHold(); 
+			break; 
+		case "inverse": 
+			inverse(); 
+			break; 
+		case "kreuzprodukt": 
+			kreuzprodukt(); 
+			break; 
+		case "lr_zerlegung": 
+			lrZerlegung(); 
+			break; 	
+		case "matrixaddition": 
+			matrixAddition(); 
+			break; 
+		case "matrix_vektor": 
+			vektormultiplikation(); 
+			break; 
+		case "matrixmultiplikation": 
+			matrixmultiplikation(); 
+			break; 
+		case "qr_house": 
+			qrhouse(); 
+			break; 
+		case "qr_givens": 
+			qrgivens(); 
+			break; 
+		case "rang": 
+			rang(); 
+			break; 
+		case "skalar_matrix": 
+			skalarmultiplikation(); 
+			break; 
+		case "skalarprodukt": 
+			skalarProdukt(); 
+			break; 
+		case "spatprodukt": 
+			spatprodukt(); 
+			break; 
+		case "spur": 
+			spur(); 
+			break; 	
+		case "transponieren": 
+			transponierteAusgeben(); 
+			break; 
+		case "vektor1_vektor2": 
+			vtv(); 
+			break; 
+		case "spaltensummennorm": 
+			spaltensummennorm(); 
+			break; 
+		case "zeilensummennorm": 
+			zeilensummennorm(); 
+			break; 
+		case "gesamtnorm": 
+			gesamtnorm(); 
+			break; 
+		case "relativer_fehler": 
+			relFehler(); 
+			break; 
+		case "betragsnorm": 
+			betragsnorm(); 
+			break; 
+		case "euklidnorm": 
+			euklidnorm(); 
+			break; 
+		case "maxnorm": 
+			maxnorm(); 
+			break; 
+		case "pivotisierung": 
+			pivotisierung(); 
+			break; 	
+		case "aequilibrierung_pivotisierung": 
+			aequipivo(); 
+			break; 
+		case "eigenwerte": 
+			eigenwerte(); 
+			break; 
+	
+	}
+
+
+
+
+}
+
+
+
+
 
 function matrixarray(n,m){
 	var matrix = new Array(n); 
@@ -505,7 +630,7 @@ document.getElementById('erklaerung').innerHTML = 'Eine Matrixmultiplikation bei
 };
 
 function gauss(){
-document.getElementById('erklaerung').innerHTML = 'Zum lösen linearer Gleichungssysteme verwendet man Anfangs Gauss Methode Zeilen mit einander zu addieren. Leider ist diese Methode numerisch nicht sehr stabil. ';
+document.getElementById('erklaerung').innerHTML = 'Die Zerlegung in links-untere und rechts-obere Dreiecksmatrix wird mittels Gauss Elimination durchgeführt. Leider ist diese Methode numerisch nicht sehr stabil. ';
 	var matrix = einlesen(); 
 	var n = matrix.length; 
 	var m = matrix[0].length; 
@@ -1810,6 +1935,6 @@ document.getElementById('erklaerung').innerHTML = 'Eigenwerte sind toll.  ';
 	matrix = internalQrVerfahren(matrix); 
 	}
 	ausgabe(matrix);
-	
+	document.form1.ergebnis2.value = 'Mit etwas Glück sind Eigenwerte auf den Diagonalen.';
 	return matrix; 
 };

@@ -10,9 +10,6 @@
 	<meta name=Robots content="INDEX,FOLLOW">
 	<meta name=Revisit-after content="31 Days">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<script type="text/javascript" src="https://apis.google.com/js/plusone.js">
-	  {lang: 'de'}
-	</script>
 	<script>var pkBaseURL=(("https:"==document.location.protocol)?"https://karottika.de/piwik/":"http://karottika.de/piwik/");document.write(unescape("%3Cscript src='"+pkBaseURL+"piwik.js' type='text/javascript'%3E%3C/script%3E"));</script>
 	<script>try{var piwikTracker=Piwik.getTracker(pkBaseURL+"piwik.php",8);piwikTracker.trackPageView();piwikTracker.enableLinkTracking();}catch(err){}</script>
 
@@ -26,7 +23,7 @@
 
 	<!--
 
-	HIER DER INHALT! 
+	HIER DER INHALT!
 
 	-->
 	<div id=kompletterInhalt>
@@ -36,7 +33,7 @@
 
 		<form name=form1>
 		<div id=eingabe>
-		
+
 		<table id=eingabeTabelle>
 			<tr>
 				<td class=tdTop>
@@ -51,12 +48,12 @@
 				<td class=tdTop>
 					Skalar
 				</td>
-							
+
 			</tr>
 			<tr>
 				<td>
 		<textarea name=m1 class="upper_matrix" cols=25 rows=7>1 1 1 1 1
-1 2 3 4 8 
+1 2 3 4 8
 1 8 2 4 1
 1 1 4 2 5
 1 2 3 4 5</textarea>
@@ -88,7 +85,7 @@
 				<td>
 		<textarea name=skalar cols=3 rows=1>5</textarea>
 				</td>
-							
+
 			</tr>
 		</table>
 
@@ -99,7 +96,7 @@
 		<div id=optionen>
 
 			<br>
-			Operation: 
+			Operation:
 			<select name="operationen" onchange="perform_operation()">
 				<optgroup label="Generelle Operationen: ">
 					<option value="adjunkte">Adjunkte</option>
@@ -134,7 +131,7 @@
 					<option value="gesamtnorm">||A||</option>
 					<option value="relativer_fehler">&kappa;<sub>rel</sub></option>
 				</optgroup>
-				<optgroup label="Vektornormen: ">Vektornormen: 
+				<optgroup label="Vektornormen: ">Vektornormen:
 					<option value="betragsnorm">||A||</option>
 					<option value="euklidnorm">||A|| <sub>2</sub></option>
 					<option value="maxnorm">||A||<sub>&#8734;</sub></option>
@@ -144,14 +141,14 @@
 					<option value="pivotisierung">Pivotisierung</option>
 					<option value="aequlibrierung_pivotisierung">Pivotisierung und Äquilibrierung</option>
 				</optgroup>
-			</select> 
-			
+			</select>
+
 			<input type=button value="&#8634;" onclick="perform_operation()">
-			
-			
-			
-			
-			
+
+
+
+
+
 			Anzahl Nachkommastellen:
 			<select name=nachkomma size=1>
 			<option>0</option>
@@ -166,7 +163,7 @@
 			<option>9</option>
 
 			</select>
-			
+
 		</div>
 		<br>
 		<div id=ausgabe>
@@ -181,7 +178,7 @@
 
 						Matrix-Vektor-Multiplikation: Eine Matrixmultiplikation bei der der Vektor als n*1 Matrix aufgefasst wird. <br><br>
 						Gauß Elimination: Zum lösen linearer Gleichungssysteme verwendet man Anfangs Gauss Methode Zeilen mit einander zu addieren. Leider ist diese Methode numerisch nicht sehr stabil.  <br><br>
-						LR-Zerlegung: Mittels Gauss-Verfahren wird diese Matrix in eine linke untere und eine rechte obere Dreiecksmatrix zerlegt. <br><br> 
+						LR-Zerlegung: Mittels Gauss-Verfahren wird diese Matrix in eine linke untere und eine rechte obere Dreiecksmatrix zerlegt. <br><br>
 						Skalarprodukt: Das Skalarprodukt ist eine Verknüpfung zweier Vektoren, bei der die jeweiligen Elemente miteinander multipliziert werden und die Produkte addiert. <br><br>
 						Vektormultiplikation: Die Vektormultiplikation mit 1 Vektor ausführen. Dies spannt eine Matrix auf. <br><br>
 						Rang: Der Rang einer Matrix ist die Anzahl der linear unabhängigen Zeilen. (=Anzahl der linear unabhängigen Spalten) <br><br>
@@ -207,40 +204,33 @@
 						Bei dieser Äquilibrierung wird bekommt jede Zeile eine Betragsnorm von 1. Dadurch werden Verfahren durch zusätzliche Pivotisierung sehr viel stabiler. <br><br>
 						Äquilibrierung und Pivotisierung führt dazu, dass zB die LR-Zerlegung sehr viel stabiler wird. <br><br>
 						Eigenwerte sind toll.  <br><br>
-				</p> 
+				</p>
 			</div>
 			<br>
 			<textarea name=ergebnisp class="result_matrix" cols=35 rows=7>z.B. Permutationsmatrizen   </textarea>
 			<textarea name=ergebnis class="result_matrix" cols=35 rows=7>Ergebnisfeld 1 </textarea>
 			<textarea name=ergebnis2 class="result_matrix" cols=35 rows=7>Ergebnisfeld 2 </textarea>
 			<br>
-			
-			
+
+
 			<input type=button class=move_button value="Links --> Matrix 1" onclick="hoch1()">
 			<input type=button class=move_button value="Links --> Matrix 2" onclick="hoch6()">
 			<input type=button class=move_button value="Mitte --> Matrix 1" onclick="hoch2()">
 			<input type=button class=move_button value="Mitte --> Matrix 2" onclick="hoch3()">
 			<input type=button class=move_button value="Rechts --> Matrix 1" onclick="hoch4()">
 			<input type=button class=move_button value="Rechts --> Matrix 2" onclick="hoch5()">
-			
 
-			
+
+
 		</div>
 		</form>
 		<div id=unten>
 			<br>
 			Version 0.995 &copy2010-2014 by Karsten Behrendt<br/>
-			<span id="warning">Bitte unbedingt Fehler und Kritik an mich schicken!</span> <br/>
-			Anregung/Kritik/Dank: info@matrizen-rechner.de <br/>
+      <span id="warning">Fehler, Kritik, Likes, und Code bitte auf <a href="https://github.com/karstenBehrendt/matrizenrechner">Github</a></span> <br/>
 			<a href=impressum.htm>Impressum</a>, <a href=changelog.txt>Changelog </a>
 
 			<br/><br>
-			<div class="plusdinger">
-			<!-- Facebook -->
-			<div id="fb-root"></div><script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like href="http://matrizen-rechner.de/ " send="false" layout="box_count" show_faces="false"></fb:like> 
-			<!-- google+1 -->
-			<g:plusone size="tall"></g:plusone>
-			</div>
 		</div>
 	</div>
 
